@@ -19,7 +19,7 @@ const userAuth = async (req,res,next)=>{
     //    req.body.email = user.email; // ✅ Now logout can access `req.body.email`
        next();
     } catch (error) {
-        res.json({sucess:false, message:error.message})
+        res.json({sucess:false, message:"error.message"})
     }
 }
 export default userAuth;

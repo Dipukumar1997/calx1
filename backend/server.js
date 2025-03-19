@@ -18,7 +18,7 @@
 
 // app.listen(port ,()=>console.log(`server started on PORT : ${port}`));
 import express from "express";
-import connectDB from "../server/config/mongodb.js";
+import connectDB from "../backend/config/mongodb.js";
 import dotenv from "dotenv";
 import cors from "cors";
 import authRouter from "./Routes/authroutes.js";
@@ -36,7 +36,7 @@ const port = process.env.PORT || 4000;
 connectDB(); // Connect to MongoDB
 
 // CORS Configuration
-const allowedOrigins = ["http://localhost:3000"]; // Removed trailing slash
+const allowedOrigins = ["http://localhost:3002"]; // Removed trailing slash
 
 // Middleware
 app.use(express.json());

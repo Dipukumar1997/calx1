@@ -34,7 +34,7 @@ const getAuthState =async()=>{
       toast.error(error.message);
     }
   };
-  //whenever the page is loaded we call this function using useEffect
+  // whenever the page is loaded we call this function using useEffect
   useEffect(()=>{
     getAuthState();
   },[])

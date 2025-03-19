@@ -55,6 +55,7 @@ export default function  Login () {
 //   }
 // }
 const onSubmitHandler = async (e) => {
+  console.log("Backend URL:", backendUrl);
   setLoading(true); // Show loader
   // toast.success("Login successful! 🎉"); // ✅ Toast should work
   try {
@@ -97,6 +98,7 @@ const onSubmitHandler = async (e) => {
       }
     }
   } catch (error) {
+    console.error("Error details:", error); 
     // Properly handling errors
     toast.error(error?.response?.data?.message || "Something went wrong");
   }
