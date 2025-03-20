@@ -97,11 +97,13 @@ export const Navbar = () => {
         try {
             axios.defaults.withCredentials = true;
             const { data } = await axios.post(backendUrl + "/api/auth/send-verify-otp");
+            console.log("Backend Response:", data);
             if (data.success) {
                 navigate('/email-verify');
                 toast.success(data.message);
             } else {
-                toast.error("data.message");
+                console.log("pritning the error in Navbar.jsx ")
+                toast.error(data.message);
             }
         } catch (error) {
             toast.error(error.message);

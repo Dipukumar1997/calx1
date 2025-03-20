@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 const userAuth = async (req,res,next)=>{
-    const {token} = req.cookies;
+    const token= req.cookies.token;
     if (!token) {
         return res.json({sucess:false, message: 'not authrozied login again'})
     }
@@ -11,8 +11,13 @@ const userAuth = async (req,res,next)=>{
         return res.status(401).json({ success: false, message: "Invalid token, please log in again" });
     }
        if (decodedtoken.id) {
+        // console.log("decoded token ",decodedtoken.id)
+       
+
         req.body.userId = decodedtoken.id;
         req.body.email = decodedtoken.email;
+        // console.log("req.body.userId ",req.body.userId )
+        // console.log("req.body.useremail ",req.body.email )
        }else{
         return res.json({sucess:false, message:"Not Authoried Login Aagin"})
        }
